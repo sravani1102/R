@@ -1,0 +1,11 @@
+f <- function(n){
+  sum <- 0
+  for(x in n){
+    sum <- sum+x
+  }
+  mean <- sum/length(n)
+  return(mean)
+}
+n=scan()
+mean=f(n)
+print(mean)
