@@ -1,0 +1,9 @@
+names <- c("Sravani","Vindhya","Pragathi","Siva","Krishna","Parvathi")
+print("Enter average marks of students")
+marks <- scan()
+barplot(marks,
+        xlab="Names Of The Students",
+        ylab="Average of six subjects",
+        main="RVR&JCCE 2020-2024",
+        names.arg=names,
+        col=c("red","blue","green","yellow","pink","brown"),las=2)
