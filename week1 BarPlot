@@ -1,9 +1,14 @@
-names <- c("Sravani","Vindhya","Pragathi","Siva","Krishna","Parvathi")
-print("Enter average marks of students")
-marks <- scan()
-barplot(marks,
-        xlab="Names Of The Students",
-        ylab="Average of six subjects",
-        main="RVR&JCCE 2020-2024",
-        names.arg=names,
-        col=c("red","blue","green","yellow","pink","brown"),las=2)
+Names <- c("Sravani","Vindhya","Pragathi","Parvathi","Krishna")
+Roll_NO <- c("Y20CS074","Y20CS019","Y20CS009","Y20CS134","Y20CS193")
+gender <- c("Female","Female","Female","Female","Male")
+Average <- scan()
+section <- c("B","A","A","C","C")
+dataframe <- data.frame(Names,gender,Roll_NO,section,Average)
+dataframe
+write.csv(dataframe,"RVR&JC.csv",row.names=FALSE)
+x=read.csv("RVR&JC.csv")
+x
+barplot(x$Average,
+        xlab="Name of the Student",
+        ylab="Average",
+        main="RVR&JC 2020-2024",names.arg=x$Names,col=c("red","yellow","pink","blue","green"),las=2)
