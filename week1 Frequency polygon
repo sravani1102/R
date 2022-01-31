@@ -1,0 +1,18 @@
+#frequency polygon
+S.no <- 1:5
+Names <- c("Sravani","Vindhya","Pragathi","Parvathi","Krishna")
+Roll_NO <- c("Y20CS074","Y20CS019","Y20CS009","Y20CS134","Y20CS193")
+gender <- c("Female","Female","Female","Female","Male")
+Average <- scan()
+section <- c("B","A","A","C","C")
+dataframe <- data.frame(S.no,Names,gender,Roll_NO,section,Average)
+dataframe
+write.csv(dataframe,"RVR&JC.csv",row.names=FALSE)
+x=read.csv("RVR&JC.csv")
+x
+plot(x$S.no,x$Average,
+     type='l',
+     xlab="Students",
+     ylab="Average",
+     main="RVR&JC 2020-2024")
+polygon(c(1,x$S.no,5),c(0,x$Average,0),col="blue")
