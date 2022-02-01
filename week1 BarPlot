@@ -11,4 +11,4 @@ x
 barplot(x$Average,
         xlab="Name of the Student",
         ylab="Average",
-        main="RVR&JC 2020-2024",names.arg=x$Names,col=c("red","yellow","pink","blue","green"),las=2)
+        main="RVR&JC 2020-2024",names.arg=x$Names,col=rainbow(length(Names)),las=2)
