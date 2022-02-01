@@ -1,0 +1,8 @@
+States <- c("Andhra Pradesh","Telangana","Tamil Nadu","Karnataka","Kerala","Goa","Maharastra")
+Population <- c(28,19,12,11,9,8,13)
+India <- data.frame(States,Population)
+View(India)
+pie(Population,
+    labels=States,
+    main="Population in South India",
+    col=rainbow(length(States)))
