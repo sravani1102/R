@@ -4,7 +4,6 @@ Names <- c("Sravani","Pragathi","Vindhya","Krishna","Parameswararao","Parvathi",
            "Ratna","Babu","Bhuvana","Bhavani","Raju","Sudheer","Prasad")
 gender <- c("F","F","F","M","M","F","M","M","F","M","M","F","M","M","M","F","F","F","F","F","F","F","F","M","M","F","F","M","M","M")
 marks <- c(7,2,5,3,6,7,1,2,5,6,7,3,5,2,7,4,2,1,5,6,3,2,4,5,6,1,5,7,2,6)
-length(gender)
 dataframes=data.frame(Names,gender,marks)
 write.csv(dataframes,"B_Section.csv",row.names=FALSE)
 x=read.csv("B_Section.csv")
