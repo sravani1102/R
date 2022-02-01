@@ -7,7 +7,7 @@ marks <- c(7,2,5,3,6,7,1,2,5,6,7,3,5,2,7,4,2,1,5,6,3,2,4,5,6,1,5,7,2,6)
 dataframes=data.frame(Names,gender,marks)
 write.csv(dataframes,"B_Section.csv",row.names=FALSE)
 x=read.csv("B_Section.csv")
-x
+View(x)
 hist(x$marks,
      xlab="Assignment marks",
      ylab="Frequency of students",
