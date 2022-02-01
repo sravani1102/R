@@ -1,13 +1,13 @@
+#Bar Plot
 Names <- c("Sravani","Vindhya","Pragathi","Parvathi","Krishna")
 Roll_NO <- c("Y20CS074","Y20CS019","Y20CS009","Y20CS134","Y20CS193")
 gender <- c("Female","Female","Female","Female","Male")
-Average <- scan()
+Average <- c(89,54,87,92,72)
 section <- c("B","A","A","C","C")
 dataframe <- data.frame(Names,gender,Roll_NO,section,Average)
-dataframe
 write.csv(dataframe,"RVR&JC.csv",row.names=FALSE)
 x=read.csv("RVR&JC.csv")
-x
+View(x)
 barplot(x$Average,
         xlab="Name of the Student",
         ylab="Average",
