@@ -14,4 +14,4 @@ hist(x$marks,
      main="RVR&JC 2020-2024",
      xlim=c(0,7),
      breaks=20,
-     col="blue")
+     col=rainbow(length(Names)))
