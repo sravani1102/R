@@ -1,6 +1,6 @@
 #Fit a Binomial Distribution and test goodness of fit
 x <- c(0,1,2,3,4,5,6)
-f <- c(7,64,140,210,132,75,12)
+f <- c(7,6,19,35,30,23,7)
 fx <- f*x
 N <- sum(f)
 print(paste("Total frequency",N))
@@ -25,7 +25,7 @@ tablevalue <- qchisq(0.95,df=n)
 print(paste("Calculated Value = ",result[1]))
 print((paste("Table Value = ",tablevalue)))
 if(result[1]<tablevalue){
-  print("Data fit the Binomial Distribtion")
+  print("H0 is accepted.Data fit Binomial Distribtion")
 }else{
-  print("Data does not fit the Binomial Distribtion")
+  print("H0 is rejected.Data does not fit Binomial Distribtion")
 }
