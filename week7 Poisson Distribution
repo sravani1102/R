@@ -15,10 +15,10 @@ print(Px)
 NPx <- Px*N
 NPx1 <- round(NPx,digits=0)
 Table <- data.frame(x,f,fx,Px,NPx,NPx1)
-Table
+print(Table)
 sums <- c(NA,N,sum(fx),NA,NA,sum(NPx1))
 Table <- rbind(Table,sums)
-Table
+print(Table)
 result <- chisq.test(f,p=P,rescale.p = TRUE)
 tablevalue <- qchisq(0.95,df=n)
 print(paste("Calculated Value = ",result[1]))
