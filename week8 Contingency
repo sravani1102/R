@@ -14,12 +14,13 @@ print(m2)
 Tsum <- sum(m)
 print(paste("Total sum =",Tsum))
 result <- chisq.test(m)
-print("Caluculated Value :")
 print(result$expected)
 #degree of freedom
 v <- (r-1)*(c-1)
 tablevalue <- qchisq(0.95,df=v)
-print(paste("Table Value : ",tablevalue))
+print("Caluculated Value :")
+print(result)
+print(paste("Table Value : ",round(tablevalue,5)))
 if(result[1]<tablevalue){
   print("H0 is accepted.")
 }else{
