@@ -1,15 +1,19 @@
 #Fit a Contingency Distribution and test goodness of fit
-r <- 3
-c <- 3
+print("Enter number of rows")
+r <- scan()
+print("Enter number of columns")
+c <- scan()
 m <- matrix(c(23,28,9,60,79,49,29,60,63),r,c)
 dimnames(m) <- list(c("Poor","Avg","Very good"),
                     c("Below Avg.","Avg.","Above Avg."))
 print(m)
 Rsum <- rowSums(m)
 m1 <- cbind(m,Rsum)
+print("Row Sums")
 print(m1)
 Csum <- colSums(m)
 m2 <- rbind(m,Csum)
+print("Column sums")
 print(m2)
 Tsum <- sum(m)
 print(paste("Total sum =",Tsum))
