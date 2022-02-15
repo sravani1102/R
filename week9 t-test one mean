@@ -1,20 +1,48 @@
 #t-test for one mean
-data <- c(45,46,50,52,48,47,49,53,51)
-alpha <- 0.01
+print("Enter data")
+data <- scan()
+print("Enter sample mean :")
+mu <- scan()
+print("Enter level of significance :")
+alpha <- scan()
 n <- length(data)
-mu <- 47.5
 mean <- sum(data)/n
-print(paste("Mean :",mean))
 variance <- sum((data-mean)**2)/(n-1)
 s <- sqrt(variance)
-print(paste("Standard Deviation :",round(s,digits = 5)))
-result <- t.test(data,mu=mu)
-print("Calculated Value")
+print(paste("Mean : ",round(mean,digits = 5)))
+print(paste("Standard deviation : ",round(s,digits = 5)))
+result <- t.test(data,mu=mu,alternative = "greater")
+print("Caluculated Value : ")
 print(result)
-tablevalue <- qt(1-(alpha/2),df=n-1)
-print(paste("Table Value for two tailed test:",round(tablevalue,digits = 5)))
+tablevalue <- qt(1-alpha/2,df=n-1)
+print(paste("Table value : ",round(tablevalue,digits = 5)))
 if(result[1]<tablevalue){
-  print("H0 is accepted.")
+  print("H0 is accepted")
 }else{
-  print("H0 is rejected.")
+  print("H0 is rejected")
 }
+
+
+
+ data <- scan()
+1: 45
+2: 47
+3: 50
+4: 52
+5: 48
+6: 47
+7: 49
+8: 53
+9: 51
+10: 
+Read 9 items
+> print("Enter sample mean :")
+[1] "Enter sample mean :"
+> mu <- scan()
+1: 47.5
+2: 
+Read 1 item
+> print("Enter level of significance :")
+[1] "Enter level of significance :"
+> alpha <- scan()
+1: 0.01
