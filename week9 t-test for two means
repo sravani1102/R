@@ -9,11 +9,13 @@ n1 <- length(x)
 n2 <- length(y)
 meanx <- sum(x)/n1
 meany <- sum(y)/n2
+print(paste("Mean1 = ",meanx))
+print(paste("Mean2 = ",meany))
 x2 <- (x-meanx)^2
 y2 <- ((y-meany)^2)
 variance <- (sum(x2)+sum(y2))/(n1+n2-2)
 s <- sqrt(variance)
-s
+print(paste("Standarad Deviation :",round(s,digits = 5)))
 result <- t.test(x,y,alternative = "greater")
 print("Calculated Value : ")
 print(result)
