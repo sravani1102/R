@@ -1,0 +1,24 @@
+#Paired t test
+print("Enter before data :")
+x <- scan()
+print("Enter after data :")
+y <- scan()
+print("Enter level of significance :")
+alpha <- scan()
+d <- x-y
+n <- length(d)
+meand <- sum(d)/n
+variance <- sum((d-meand)^2)/(n-1)
+sd <- sqrt(variance)
+print(paste("Mean : ",round(meand,digits = 5)))
+print(paste("Standard deviation",round(sd,digits = 5)))
+result <- t.test(x,y,paired = TRUE,alternative = "greater")
+print("Calculated Value : ")
+print(result)
+tablevalue <- qt(1-alpha/2,df=n-1)
+print(paste("Table value :",round(tablevalue,digits = 5)))
+if(result[1]<tablevalue){
+  print("H0 is accepted.")
+}else{
+  print("H0 is rejected.")
+}
