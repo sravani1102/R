@@ -1,0 +1,27 @@
+#t-test for two means
+print("Enter first data")
+x <- scan()
+print("Enter second data")
+y <- scan()
+print("Enter Level of Significance")
+alpha <- scan()
+n1 <- length(x)
+n2 <- length(y)
+meanx <- sum(x)/n1
+meany <- sum(y)/n2
+x2 <- (x-meanx)^2
+y2 <- ((y-meany)^2)
+variance <- (sum(x2)+sum(y2))/(n1+n2-2)
+s <- sqrt(variance)
+s
+result <- t.test(x,y,alternative = "greater")
+print("Calculated Value : ")
+print(result)
+tablevalue <- qt(1-alpha,df=n1+n2+-2)
+print("Table Value : ")
+print(tablevalue)
+if(result[1]<tablevalue){
+  print("H0 is accepted")
+}else{
+  print("H0 is rejected")
+}
