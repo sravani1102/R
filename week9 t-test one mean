@@ -46,3 +46,42 @@ Read 1 item
 [1] "Enter level of significance :"
 > alpha <- scan()
 1: 0.01
+
+
+
+#2
+print("Enter sample mean :")
+mu <- scan()
+print("Enter sample size :")
+n <- scan()
+print("Enter mean :")
+mean <- scan()
+print("Enter Standarad deviation :")
+s <- scan()
+t <- (mean-mu)/(s/sqrt(n))
+tablevalue <- qt(0.01,df=n-1)
+print(paste("Calculated Value : ",round(t,digits = 5)))
+print(paste("Table Vlue :",round(tablevalue,digits = 5)))
+if(t>tablevalue){
+  print("H0 is accepted")
+}else{
+  print("H0 is rejected")
+}
+
+
+#3 confidence
+print("Enter data :")
+data <- scan()
+print("Enter confidence :")
+c <- scan()
+n <- length(data)
+mean <- sum(data)/n
+variance <- sum((data-mean)**2)/(n-1)
+s <- sqrt(variance)
+print(paste("Mean : ",round(mean,digits = 5)))
+print(paste("Standard deviation : ",round(s,digits = 5)))
+t <- qt((1-c)/2,n-1)
+limit1 <- round(mean-(t*(s/sqrt(n))),digits = 5)
+limit2 <- round(mean+(t*(s/sqrt(n))),digits = 5)
+print("Confident Limits are:")
+print(paste0("[",limit2,",",limit1,"]"))
