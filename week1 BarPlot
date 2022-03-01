@@ -2,13 +2,28 @@
 Names <- c("Sravani","Vindhya","Pragathi","Parvathi","Krishna")
 Roll_NO <- c("Y20CS074","Y20CS019","Y20CS009","Y20CS134","Y20CS193")
 gender <- c("Female","Female","Female","Female","Male")
-Average <- c(89,54,87,92,72)
-section <- c("B","A","A","C","C")
-dataframe <- data.frame(Names,gender,Roll_NO,section,Average)
+print("Enter Total Marks :")
+Total <- scan()
+print("Enter Average :")
+Average <- scan()
+print("Enter rank with respect to Average :")
+rank <- scan()
+dataframe <- data.frame(Names,gender,Roll_NO,Total,Average,rank)
 write.csv(dataframe,"RVR&JC.csv",row.names=FALSE)
 x=read.csv("RVR&JC.csv")
 View(x)
+barplot(x$Total,
+        xlab="Name of the Student",
+        ylab="Total Marks",
+        main="RVR&JC 2020-2024",names.arg=x$Names,col=rainbow(length(Names)),
+        las=2)
 barplot(x$Average,
         xlab="Name of the Student",
         ylab="Average",
-        main="RVR&JC 2020-2024",names.arg=x$Names,col=rainbow(length(Names)),las=2)
+        main="RVR&JC 2020-2024",names.arg=x$Names,col=rainbow(length(Names)),
+        las=2)
+barplot(x$rank,
+        xlab="Name of the Student",
+        ylab="Rank",
+        main="RVR&JC 2020-2024",names.arg=x$Names,col=rainbow(length(Names)),
+        las=2)
