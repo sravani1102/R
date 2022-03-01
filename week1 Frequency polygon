@@ -3,15 +3,31 @@ S.no <- 1:5
 Names <- c("Sravani","Vindhya","Pragathi","Parvathi","Krishna")
 Roll_NO <- c("Y20CS074","Y20CS019","Y20CS009","Y20CS134","Y20CS193")
 gender <- c("Female","Female","Female","Female","Male")
-Average <- c(89,54,87,92,72)
-section <- c("B","A","A","C","C")
-dataframe <- data.frame(S.no,Names,gender,Roll_NO,section,Average)
+print("Average in Test1 :")
+Ave1 <- scan()
+print("Average in Test2 :")
+Ave2 <- scan()
+print("Average in Test3 :")
+Ave3 <- scan()
+dataframe <- data.frame(S.no,Names,gender,Roll_NO,Ave1,Ave2,Ave3)
 write.csv(dataframe,"RVR&JC.csv",row.names=FALSE)
 x=read.csv("RVR&JC.csv")
-x
-plot(x$S.no,x$Average,
+print(x)
+plot(x$S.no,x$Ave1,
      type='o',
      xlab="Students",
-     ylab="Average",
+     ylab="Average 1",
      main="RVR&JC 2020-2024")
-polygon(c(1,x$S.no,5),c(0,x$Average,0),col="blue")
+polygon(c(1,x$S.no,5),c(0,x$Ave1,0),col="blue")
+plot(x$S.no,x$Ave2,
+     type='o',
+     xlab="Students",
+     ylab="Average 2",
+     main="RVR&JC 2020-2024")
+polygon(c(1,x$S.no,5),c(0,x$Ave2,0),col="green")
+plot(x$S.no,x$Ave3,
+     type='o',
+     xlab="Students",
+     ylab="Average 3",
+     main="RVR&JC 2020-2024")
+polygon(c(1,x$S.no,5),c(0,x$Ave3,0),col="blue")
