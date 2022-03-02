@@ -1,17 +1,35 @@
 #histogram
 Names <- c("Sravani","Pragathi","Vindhya","Krishna","Parameswararao","Parvathi","Siva","Ram","Sita","Suresh","Ramesh",
-           "Gita","Sunny","Bunny","Ramu","Vijaya","Madhavi","Nithya","praveena","Chandrika","Srilekha","Prapurna","Satwika",
-           "Ratna","Babu","Bhuvana","Bhavani","Raju","Sudheer","Prasad")
-gender <- c("F","F","F","M","M","F","M","M","F","M","M","F","M","M","M","F","F","F","F","F","F","F","F","M","M","F","F","M","M","M")
-marks <- c(7,2,5,3,6,7,1,2,5,6,7,3,5,2,7,4,2,1,5,6,3,2,4,5,6,1,5,7,2,6)
-dataframes=data.frame(Names,gender,marks)
+           "Gita","Sunny","Bunny","Ramu")
+gender <- c("F","F","F","M","M","F","M","M","F","M","M","F","M","M","M")
+print("Enter Marks in Subject1 :")
+marks1 <- scan()
+print("Enter Marks in Subject2 :")
+marks2 <- scan()
+print("Enter Marks in Subject3 :")
+marks3 <- scan()
+dataframes=data.frame(Names,gender,marks1,marks2,marks3)
 write.csv(dataframes,"B_Section.csv",row.names=FALSE)
 x=read.csv("B_Section.csv")
 View(x)
-hist(x$marks,
-     xlab="Assignment marks",
+hist(x$marks1,
+     xlab="Assignment marks1",
      ylab="Frequency of students",
      main="RVR&JC 2020-2024",
      xlim=c(0,7),
-     breaks=20,
+     breaks=10,
+     col=rainbow(length(Names)))
+hist(x$marks2,
+     xlab="Assignment marks2",
+     ylab="Frequency of students",
+     main="RVR&JC 2020-2024",
+     xlim=c(0,7),
+     breaks=10,
+     col=rainbow(length(Names)))
+hist(x$marks3,
+     xlab="Assignment marks3",
+     ylab="Frequency of students",
+     main="RVR&JC 2020-2024",
+     xlim=c(0,7),
+     breaks=10,
      col=rainbow(length(Names)))
