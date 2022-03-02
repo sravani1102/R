@@ -1,8 +1,21 @@
 States <- c("Andhra Pradesh","Telangana","Tamil Nadu","Karnataka","Kerala","Goa","Maharastra")
-Population <- c(28,19,12,11,9,8,13)
-India <- data.frame(States,Population)
+print("Enter Population in 2019 :")
+Population1 <- scan()
+print("Enter Population in 2020 :")
+Population2 <- scan()
+print("Enter Population in 2021 :")
+Population3 <- scan()
+India <- data.frame(States,Population1,Population2,Population3)
 View(India)
-pie(Population,
+pie(Population1,
     labels=States,
-    main="Population in South India",
+    main="Population in South India 2019",
+    col=rainbow(length(States)))
+pie(Population2,
+    labels=States,
+    main="Population in South India 2020",
+    col=rainbow(length(States)))
+pie(Population3,
+    labels=States,
+    main="Population in South India 2021",
     col=rainbow(length(States)))
