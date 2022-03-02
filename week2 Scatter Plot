@@ -3,14 +3,28 @@ S.no <- 1:5
 Names <- c("Sravani","Vindhya","Pragathi","Parvathi","Krishna")
 Roll_NO <- c("Y20CS074","Y20CS019","Y20CS009","Y20CS134","Y20CS193")
 gender <- c("Female","Female","Female","Female","Male")
-Average <- c(89,54,87,92,72)
-section <- c("B","A","A","C","C")
-dataframe <- data.frame(S.no,Names,gender,Roll_NO,section,Average)
+print("Enter Average marks in 2020 :")
+Ave1 <- scan()
+print("Enter Average marks in 2021 :")
+Ave2 <- scan()
+print("Enter Average marks in 2022 :")
+Ave3 <- scan()
+dataframe <- data.frame(S.no,Names,gender,Roll_NO,Ave1,Ave2,Ave3)
 write.csv(dataframe,"RVR&JC.csv",row.names=FALSE)
 x=read.csv("RVR&JC.csv")
 x
-plot(x$S.no,x$Average,
+plot(x$S.no,x$Ave1,
      xlab="Students",
-     ylab="Average",
+     ylab="Average in 2020",
+     main="RVR&JC 2020-2024",
+     col=rainbow(length(x$S.no)))
+plot(x$S.no,x$Ave2,
+     xlab="Students",
+     ylab="Average in 2021",
+     main="RVR&JC 2020-2024",
+     col=rainbow(length(x$S.no)))
+plot(x$S.no,x$Ave3,
+     xlab="Students",
+     ylab="Average in 2022",
      main="RVR&JC 2020-2024",
      col=rainbow(length(x$S.no)))
