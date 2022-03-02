@@ -6,6 +6,7 @@ f <- function(n){
   mean <- sum/length(n)
   return(mean)
 }
+print("Enter data :")
 n=scan()
 mean=f(n)
-print(mean)
+print(paste("Mean = ",mean))
